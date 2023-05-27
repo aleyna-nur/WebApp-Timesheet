@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MaroTeknoloji User</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+        <script src="js/User.js"></script>
+
+    </head>
+
+    <header>
+      <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light"> <!--bh-light-->
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">MaroPortal</a> <!--!!!!!!Mobilde sola yaklaşmalı-->
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="User.html">USER</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="Customer.html">CUSTOMER</a>
+                  
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="Timesheet.html"> TIMESHEET</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </section>
+    </header>
+
+    <body>
+
+      <!-- Post Modal -->
+      <div class="modal fade" id="post" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New User</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+              
+              <form id="postUserForm">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Name</label>
+                  <input type="text" class="form-control" id="" placeholder="Name" name="name">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Email</label>
+                  <input type="text" class="form-control" id="" placeholder="Email" name="email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Status</label>
+                  <input type="text" class="form-control" id="" placeholder="Status" name="status">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Create User</label>
+                  <input type="text" class="form-control" id="" placeholder="Create User" name="createUser">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Role</label>
+                  <input type="text" class="form-control" id="" placeholder="Role" name="role">
+                </div>
+                
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                
+              </form>
+        
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--END Modal-->
+
+<br>     
+
+      <div class="row">
+        <div class="col-md-12 text-right">
+          <!--<button class="btn btn-primary" id="getUser-btn">GET Data</button>-->
+          <button class="btn btn-primary" id="postUser-btn" data-bs-toggle="modal" data-bs-target="#post" style="float: right;">Add New User</button>
+        </div>
+      </div>
+
+     
+
+
+      <!-- PUT Modal -->
+      <div class="modal fade" id="put" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+              
+              <form id="putUserForm">
+                <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" class="form-control" id="u_name" placeholder="Name" name="name">
+                </div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="text" class="form-control" id="u_email" placeholder="Email" name="email">
+                </div>
+                <div class="form-group">
+                  <label>Create User</label>
+                  <input type="text" class="form-control" id="u_createUser" placeholder="Create User" name="createUser">
+                </div>
+                <div class="form-group">
+                  <label>Role</label>
+                  <input type="text" class="form-control" id="u_role" placeholder="Role" name="role">
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="A" id="u_status" name="status">
+                  <label class="form-check-label" for="flexCheckDefault">Active</label>
+                </div>
+                
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                
+              </form>
+        
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--END Modal-->
+
+      <input type="text" id="search-name" class="col-xs-2" placeholder="Search Name">
+      <input type="text" id="search-email" class="col-xs-2" placeholder="Search Email">
+      <input type="text" id="search-date" class="col-xs-2" placeholder="Search Date">
+      <input type="text" id="search-status" class="col-xs-2" placeholder="Search Status">
+      <input type="text" id="search-role" class="col-xs-2" placeholder="Search Role">
+
+      <section class="table-container">
+        <table class="table" id="usersTable">
+          <thead class="table-dark">
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Create Date</th>
+              <th>Status</th>
+              <th>Create User</th>
+              <th>Role</th>
+              <th>Actions</th>
+            </tr>   
+          </thead>
+          <tbody id="userTable">
+            
+          </tbody>
+        </table>
+      </section>
+      
+      <script>
+          //-----SEARCH NAME-------
+
+      $('#search-name').on('keyup' , function(){
+          var value = $(this).val()
+          var data = searchUserName(value, userArray)
+          buildUserTable(data)
+      })
+      
+      
+      function searchUserName(value, data){
+      
+          var filteredData = []
+          for(var i = 0; i < data.length; i++){
+              value = value.toLowerCase()
+              var name = data[i].name.toLowerCase()
+      
+              if(name.includes(value)){
+                  filteredData.push(data[i])
+              }
+          }
+          console.log(filteredData)
+          return filteredData
+      
+      }
+
+      //------SEARCH EMAIL------
+      $('#search-email').on('keyup' , function(){
+          var value = $(this).val()
+          var data = searchUserEmail(value, userArray) //array
+          buildUserTable(data)
+      })
+      
+      
+      function searchUserEmail(value, data){
+      
+          var filteredData = []
+          for(var i = 0; i < data.length; i++){
+              value = value.toLowerCase()
+              var email = data[i].email.toLowerCase()
+      
+              if(email.includes(value)){
+                  filteredData.push(data[i])
+              }
+          }
+          console.log(filteredData)
+          return filteredData
+      
+      }
+  
+      //------SEARCH Date------
+      $('#search-date').on('keyup' , function(){
+          var value = $(this).val()
+          var data = searchUserDate(value, userArray) //array
+          buildUserTable(data)
+      })
+      
+      
+      function searchUserDate(value, data){
+      
+          var filteredData = []
+          for(var i = 0; i < data.length; i++){
+              var date = data[i].createDate
+      
+              if(date.includes(value)){
+                  filteredData.push(data[i])
+              }
+          }
+          
+          return filteredData
+      
+      }
+
+      //------SEARCH Status------
+      $('#search-status').on('keyup' , function(){
+          var value = $(this).val()
+          var data = searchUserStatus(value, userArray) //array
+          buildUserTable(data)
+      })
+      
+      
+      function searchUserStatus(value, data){
+      
+          var filteredData = []
+          for(var i = 0; i < data.length; i++){
+              value = value.toLowerCase()
+              var status = data[i].status.toLowerCase()
+      
+              if(status.includes(value)){
+                  filteredData.push(data[i])
+              }
+          }
+          return filteredData
+      
+      }
+
+      //------SEARCH Role------
+      $('#search-role').on('keyup' , function(){
+          var value = $(this).val()
+          var data = searchUserRole(value, userArray) //array
+          buildUserTable(data)
+      })
+      
+      
+      function searchUserRole(value, data){
+      
+          var filteredData = []
+          for(var i = 0; i < data.length; i++){
+              value = value.toLowerCase()
+              var role = data[i].role.toLowerCase()
+      
+              if(role.includes(value)){
+                  filteredData.push(data[i])
+              }
+          }
+          console.log(filteredData)
+          return filteredData
+      }
+      
+    </script>
+  
+    </body>
+
+</html>
+

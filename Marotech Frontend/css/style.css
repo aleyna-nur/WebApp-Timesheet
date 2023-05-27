@@ -1,0 +1,59 @@
+thead input {
+    width: 100%;
+}
+body
+{
+    font-family: sans-serif;
+}
+
+#nav-bar
+{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    
+}
+.navbar
+{
+    background-image: linear-gradient(to right, #005ce6, #80b3ff);
+    padding: 0 !important;
+    margin-left: auto;
+    margin-right: 0;
+}
+.navbar-nav
+{
+    padding-right: 50px;
+    padding-left: 50px;
+    
+}
+.navbar-nav li a
+{
+    color: #fff !important;
+    font-weight: 600;
+    float: right;
+    text-align: left;
+}
+.navbar-brand
+{
+    padding-left: 20px;
+    color: #fff !important;
+    font-weight: 700;
+}
+.fa-solid fa-bars
+{
+    color: #fff;
+    font-size: 30px !important;
+}
+.navbar-toggler
+{
+    outline: none !important;
+}
+.navbar-collapse{
+    float: none;
+}
+.table-container{
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border: 5px solid black;
+}
